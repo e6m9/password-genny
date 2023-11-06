@@ -17,42 +17,40 @@
 //   {
 //     text = "you got it";
 
+// var caps = genCaps();
+// var lows = genLows();
+// var spec = genSpec();
+// var nums = genNums();
+// var length = 8;
 
+// function generatePassword()
+// {
+//   var genPass = '';
+//   var varCount = [caps,lows,spec,nums].length;
 
-    // var caps = genCaps();
-    // var lows = genLows();
-    // var spec = genSpec();
-    // var nums = genNums();
-    // var length = 8;
+//   for (let i = 0; i < length; i += varCount) {
+//     if (caps) {
+//       genPass += genCaps();
+//     }
+//     if (lows) {
+//       genPass += genLows();
+//     }
+//     if (spec) {
+//       genPass += genSpec();
+//     }
+//     if (nums) {
+//       genPass += genNums();
+//     }
+//     var finalPass = genPass.slice(0, length);
+//     return finalPass;
+//     }
+//   }
 
-    // function generatePassword()
-    // {
-    //   var genPass = '';
-    //   var varCount = [caps,lows,spec,nums].length;
-
-    //   for (let i = 0; i < length; i += varCount) {
-    //     if (caps) {
-    //       genPass += genCaps();
-    //     }
-    //     if (lows) {
-    //       genPass += genLows();
-    //     }
-    //     if (spec) {
-    //       genPass += genSpec();
-    //     }
-    //     if (nums) {
-    //       genPass += genNums();
-    //     }
-    //     var finalPass = genPass.slice(0, length);
-    //     return finalPass;
-    //     }
-    //   }
-
-  // console.log(genCaps());
-  // console.log(genLows());
-  // console.log(genSpec());
-  // console.log(genNums());
-  // console.log(generatePassword());
+// console.log(genCaps());
+// console.log(genLows());
+// console.log(genSpec());
+// console.log(genNums());
+// console.log(generatePassword());
 
 
 // function passLength() {
@@ -60,16 +58,122 @@
 // }
 
 //randomize 
+// event.preventDefault()
 
 
+//   if (confirm("do you want Caps?") == true) {
+//     genCaps();
+//   } else {
+//     allCaps = false;
+//   };
 
-// Get references to the #generate and copy elements
+//   if (confirm("do you want Lows?") == true) {
+//     genLows();
+//   } else {
+//     allLows === false;
+//   };
+
+//   if (confirm("do you want Special Characters?") == true) {
+//     genSpec();
+//   } else {
+//     allSpec === false;
+//   };
+
+//   if (confirm("do you want Nums?") == true) {
+//     genNums();
+//   } else {
+//     allNums < 0;
+//   };
+
+//   function genCaps() {
+//     allCaps = '';
+//     var caps = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+//     for (var i = 1; i <= passLength; i++) {
+//       var cap = Math.floor(Math.random() * caps.length + 1);
+
+//       allCaps += caps.charAt(cap)
+//     }
+//     return allCaps;
+//   }
+
+
+//   function genLows() {
+//     allLows = '';
+//     var lows = 'abcdefghijklmnopqrstuvwxyz';
+
+//     for (var i = 1; i <= passLength; i++) {
+//       var low = Math.floor(Math.random() * lows.length + 1);
+
+//       allLows += lows.charAt(low)
+//     }
+//     return allLows;
+//   }
+
+//   function genSpec() {
+//     allSpec = '';
+//     var specs = '!@#$%^&*()-+=/.>,<":;|][}{';
+
+//     for (var i = 1; i <= passLength; i++) {
+//       var spec = Math.floor(Math.random() * specs.length + 1);
+
+//       allSpec += specs.charAt(spec)
+//     }
+//     return allSpec;
+//   }
+
+//   function genNums() {
+//     allNums = '';
+//     var nums = '0123456789';
+
+//     for (var i = 1; i <= passLength; i++) {
+//       var num = Math.floor(Math.random() * nums.length + 1);
+
+//       allNums += nums.charAt(num)
+//     }
+//     return allNums;
+//   }
+
+// }
+
+// function generatePassword() {
+//   var genPass = '';
+//   var varCount = [allCaps, allLows, allSpec, allNums].length;
+
+//   for (let i = 0; i < length; i += varCount) {
+//     if (genCaps()) {
+//       genPass += allCaps;
+//     }
+//     if (genLows()) {
+//       genPass += allLows;
+//     }
+//     if (genSpec()) {
+//       genPass += allSpec;
+//     }
+//     if (genNums()) {
+//       genPass += allNums;
+//     }
+
+//     var finalPass = genPass.slice(0, passLength);
+//     return finalPass;
+//   }
+// }
+
+// // Get references to the #generate and copy elements
 var generateBtn = document.querySelector("#generate");
 
-// var copyBtn = document.querySelector("#copy");
+// // var copyBtn = document.querySelector("#copy");
 
-// Write password to the #password input
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
+//   passwordText.value = password;
+
+// }
+// writePassword();
+// console.log(generatePassword());
 
 
 
@@ -83,125 +187,17 @@ var generateBtn = document.querySelector("#generate");
 // copyBtn.addEventListener("click", copyPassword);
 
 
+generateBtn.addEventListener("click", function genFigs() {
+  var passLength = prompt("plz choose a length between 8 and 128");
+  var passLength = Number(passLength);
 
-generateBtn.addEventListener("click", function generatePassword() {
-
-  if (confirm("do you want Caps?") == true) {
-    genCaps();
-  } else {
-    allCaps == false;
-  };
-
-  if (confirm("do you want Lows?") == true) {
-    genLows();
-  } else {
-    allLows == false;
-  };
-
-  if (confirm("do you want Special Characters?") == true) {
-    genSpec();
-  } else {
-    allSpec == false;
-  };
-
-  if (confirm("do you want Nums?") == true) {
-    genNums();
-  } else {
-    allNums < 0;
-  };
-
-function genCaps() 
-  {
-    allCaps = '';
-    var caps = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-    for (var i = 1; i <= 2; i++) {
-      var cap = Math.floor(Math.random() * caps.length + 1);
-
-      allCaps += caps.charAt(cap)
-    }
-    return allCaps;
+  while (passLength < 8 || passLength > 128 || passLength != Number(passLength)) {
+    passLength = prompt("plz choose a length between 8 and 128");
   }
-
-
-function genLows()
-{
- allLows = '';
-var lows = 'abcdefghijklmnopqrstuvwxyz';
-
-for (var i = 1; i <= 2; i++) {
-  var low =Math.floor(Math.random() * lows.length + 1);
-
-  allLows += lows.charAt(low)
 }
-return allLows;
-}
-
-function genSpec()
-{
- allSpec = '';
-  var specs = '!@#$%^&*()-+=/.>,<":;|][}{';
-
-  for (var i = 1; i <= 2; i++) {
-    var spec = Math.floor(Math.random() * specs.length + 1);
-
-    allSpec += specs.charAt(spec)
-  }
-  return allSpec;
-}
-
-function genNums()
-{
- allNums = '';
-  var nums = '0123456789';
-
-  for (var i = 1; i <= 2; i++)
-  {
-    var num = Math.floor(Math.random() * nums.length + 1);
-
-    allNums += nums.charAt(num)
-  }
-  return allNums;
-}
-
-length = 8;
-
-function generatePassword()
-{
-  var genPass = '';
-  var varCount = [allCaps,allLows,allSpec,allNums].length;
-
-  for (let i = 0; i < length; i += varCount) {
-   if (genCaps()) {
-      genPass += allCaps;
-   }
-   if (genLows()) {
-      genPass += allLows;
-   }
-   if (genSpec()) {
-      genPass += allSpec;
-   }
-   if (genNums()) {
-      genPass += allNums;
-   }
-
-    var finalPass = genPass.slice(0, length);
-    return finalPass;
-    }
-  }
-  function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-  writePassword();
-  console.log(generatePassword());
-
-  }
 );
 
 
+
+//prompts inside rock paper scissors thing to get a length variable
 //needs to reset to default at start of function
