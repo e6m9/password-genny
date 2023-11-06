@@ -98,41 +98,41 @@
 //   }
 
 
-//   function genLows() {
-//     allLows = '';
-//     var lows = 'abcdefghijklmnopqrstuvwxyz';
+  // function genLows() {
+  //   allLows = '';
+  //   var lows = 'abcdefghijklmnopqrstuvwxyz';
 
-//     for (var i = 1; i <= passLength; i++) {
-//       var low = Math.floor(Math.random() * lows.length + 1);
+  //   for (var i = 1; i <= passLength; i++) {
+  //     var low = Math.floor(Math.random() * lows.length + 1);
 
-//       allLows += lows.charAt(low)
-//     }
-//     return allLows;
-//   }
+  //     allLows += lows.charAt(low)
+  //   }
+  //   return allLows;
+  // }
 
-//   function genSpec() {
-//     allSpec = '';
-//     var specs = '!@#$%^&*()-+=/.>,<":;|][}{';
+  // function genSpec() {
+  //   allSpec = '';
+  //   var specs = '!@#$%^&*()-+=/.>,<":;|][}{';
 
-//     for (var i = 1; i <= passLength; i++) {
-//       var spec = Math.floor(Math.random() * specs.length + 1);
+  //   for (var i = 1; i <= passLength; i++) {
+  //     var spec = Math.floor(Math.random() * specs.length + 1);
 
-//       allSpec += specs.charAt(spec)
-//     }
-//     return allSpec;
-//   }
+  //     allSpec += specs.charAt(spec)
+  //   }
+  //   return allSpec;
+  // }
 
-//   function genNums() {
-//     allNums = '';
-//     var nums = '0123456789';
+  // function genNums() {
+  //   allNums = '';
+  //   var nums = '0123456789';
 
-//     for (var i = 1; i <= passLength; i++) {
-//       var num = Math.floor(Math.random() * nums.length + 1);
+  //   for (var i = 1; i <= passLength; i++) {
+  //     var num = Math.floor(Math.random() * nums.length + 1);
 
-//       allNums += nums.charAt(num)
-//     }
-//     return allNums;
-//   }
+  //     allNums += nums.charAt(num)
+  //   }
+  //   return allNums;
+  // }
 
 // }
 
@@ -160,7 +160,7 @@
 // }
 
 // // Get references to the #generate and copy elements
-var generateBtn = document.querySelector("#generate");
+
 
 // // var copyBtn = document.querySelector("#copy");
 
@@ -186,16 +186,82 @@ var generateBtn = document.querySelector("#generate");
 // generateBtn.addEventListener("click", generatePassword);
 // copyBtn.addEventListener("click", copyPassword);
 
+var generateBtn = document.querySelector("#generate");
 
-generateBtn.addEventListener("click", function genFigs() {
+generateBtn.addEventListener("click", function genPassElements() {
+
+//prompts user to choose a password length that is between 8 and 128 and not a letter
   var passLength = prompt("plz choose a length between 8 and 128");
   var passLength = Number(passLength);
 
   while (passLength < 8 || passLength > 128 || passLength != Number(passLength)) {
     passLength = prompt("plz choose a length between 8 and 128");
   }
-}
+  console.log(passLength);
+
+//prompts user to decide if there will be capital letters in the password and, if so, generates an amount equal to the previously chosen password length
+  var allCaps = '';
+  var caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var genCaps = confirm("CAPITAL LETTERS? Y/N");
+
+  if (genCaps) {
+    for (var i = 0; i <= passLength; i++) {
+      var randomNumber = Math.floor(Math.random() * caps.length);
+      allCaps += caps.substring(randomNumber, randomNumber +1);
+    }
+  }
+  console.log(allCaps);
+
+  var allLows = '';
+  var lows = 'abcdefghijklmnopqrstuvwxyz';
+  var genLows = confirm("lowercase letters? y/n");
+
+  if (genLows) {
+    for (var i = 0; i <= passLength; i++) {
+      var randomNumber = Math.floor(Math.random() * lows.length);
+      allLows += lows.substring(randomNumber, randomNumber +1);
+    }
+  }
+  console.log(allLows);
+
+  var genPass = '';
+  var allChars = [allCaps, allLows].length;
+  genPass = allChars;
+
+    var passwordText = document.querySelector("#password");
+  
+      passwordText.value = genPass;
+      console.log(genPass);
+
+  }
 );
+
+  // function genSpec() {
+  //   allSpec = '';
+  //   var specs = '!@#$%^&*()-+=/.>,<":;|][}{';
+
+  //   for (var i = 1; i <= passLength; i++) {
+  //     var spec = Math.floor(Math.random() * specs.length + 1);
+
+  //     allSpec += specs.charAt(spec)
+  //   }
+  //   return allSpec;
+  // }
+
+  // function genNums() {
+  //   allNums = '';
+  //   var nums = '0123456789';
+
+  //   for (var i = 1; i <= passLength; i++) {
+  //     var num = Math.floor(Math.random() * nums.length + 1);
+
+  //     allNums += nums.charAt(num)
+  //   }
+  //   return allNums;
+  // }
+  
+
+
 
 
 
